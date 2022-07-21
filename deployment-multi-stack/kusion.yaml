@@ -1,5 +1,5 @@
 projectName: my-app
-description: A minimal kusion project of single stack
+description: A minimal kusion project of multi stacks
 quickstart: kusion compile main.k -Y ci-test/settings.yaml
 projectFields:
   # base/base.k
