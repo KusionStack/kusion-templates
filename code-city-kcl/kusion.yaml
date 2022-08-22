@@ -1,0 +1,21 @@
+projectName: code-city-kcl
+description: Code City metaphor for visualizing Go source code in 3D.
+quickstart: kusion compile main.k
+projectFields:
+  # base/base.k
+  - name: AppName
+    description: project name. Default to 'gocity'.
+    type: string
+    default: gocity
+  - name: ContainerPort
+    description: The number of port to expose on the container's IP address.
+    type: int
+    default: 4000
+  - name: ServicePort
+    description: The port that will be exposed by this service.
+    type: int
+    default: 4000
+  - name: Image
+    description: Docker image address of gocity. Default to 'yuanhao1223/gocity:latest'.
+    type: string
+    default: yuanhao1223/gocity:latest
