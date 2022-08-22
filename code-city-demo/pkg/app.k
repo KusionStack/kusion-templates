@@ -13,8 +13,10 @@ schema App:
     deployment: {str:} = {
         apiVersion = "apps/v1"
         kind = "Deployment"
-        metadata.name = name
-        matadata.namespace = namespace
+        metadata = {
+            name = name
+            namespace = namespace
+        }
         spec.replicas = replicas
         spec.selector.matchLabels = labels
         spec.template = {
@@ -36,8 +38,10 @@ schema App:
     service: {str:} = {
         apiVersion = "v1"
         kind = "Service"
-        metadata.name = name
-        matadata.namespace = namespace
+        metadata = {
+            name = name
+            namespace = namespace
+        }
         spec.ports = [{
             name = "{}-backend".format(name)
             targetPort = containerPort
