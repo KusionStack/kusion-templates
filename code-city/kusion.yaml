@@ -22,4 +22,4 @@ stacks:
   - name: Image
     description: Docker image address of gocity. Default to 'yuanhao1223/gocity:latest'.
     type: string
-    default: yuanhao1223/gocity:latest
+    default: howieyuen/gocity:latest
