@@ -1,7 +1,24 @@
-import base.pkg.kusion_models.kube.frontend
+import catalog.models.schema.v1 as ac
+import catalog.models.schema.v1.workload as wl
+import catalog.models.schema.v1.workload.network as n
+import catalog.models.schema.v1.workload.container as c
 
-# The application configuration in stack will overwrite 
-# the configuration with the same attribute in base.
-appConfiguration: frontend.Server {
-    image = "{{ .Image }}"
+{{ .AppName }}: ac.AppConfiguration {
+    workload: wl.Service {
+        containers: {
+            "{{ .AppName }}": c.Container {
+                image = "{{ .Image }}"
+                resources: {
+                    "cpu": "500m"
+                    "memory": "512Mi"
+                }
+            }
+        }
+        replicas: 1
+        ports: [
+            n.Port {
+                port: 4000
+            }
+        ]
+    }
 }

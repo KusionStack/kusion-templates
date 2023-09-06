@@ -1,9 +1,14 @@
-import base.pkg.kusion_models.kube.frontend
-import base.pkg.kusion_models.kube.templates.resource as res_tpl
+import catalog.models.schema.v1 as ac
 
-# The application configuration in stack will overwrite 
-# the configuration with the same attribute in base.
-appConfiguration: frontend.Server {
-    image = "{{ .Image }}"
-    schedulingStrategy.resource = res_tpl.tiny
+# main.k declares customized configurations for dev stack.
+{{ .AppName }}: ac.AppConfiguration {
+    workload.containers.{{ .AppName }}: {
+        # dev stack has different app configuration
+        image = "gcr.io/google-samples/gb-frontend:v5"
+        resources = {
+            "cpu": "250m"
+            "memory": "256Mi"
+        }
+        replicas = 2
+    }
 }

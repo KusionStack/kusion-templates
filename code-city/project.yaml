@@ -1,2 +1,4 @@
 # The project basic info
-name: code-city
+name: {{ .ProjectName }}
+generator:
+  type: AppConfiguration
