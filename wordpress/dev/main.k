@@ -37,10 +37,5 @@ import catalog.models.schema.v1.accessories.database as db
         version: "5.7"
         size: 20
         instanceType: "mysql.n2.serverless.1c"
-        category: "serverless_basic"
-        # SubnetID defines the virtual subnet ID associated with the VPC that the rds
-        # instance will be created in. The rds instance won't be created in user's own VPC
-        # if this field is not provided.
-        subnetID: [your-subnet-id]
     }
 }
