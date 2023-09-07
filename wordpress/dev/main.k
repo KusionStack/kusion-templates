@@ -1,0 +1,46 @@
+import catalog.models.schema.v1 as ac
+import catalog.models.schema.v1.trait as t
+import catalog.models.schema.v1.workload as wl
+import catalog.models.schema.v1.workload.container as c
+import catalog.models.schema.v1.workload.container.probe as p
+import catalog.models.schema.v1.workload.secret as sec
+import catalog.models.schema.v1.workload.network as n
+import catalog.models.schema.v1.monitoring as m
+import catalog.models.schema.v1.accessories.database as db
+
+# base.k declares reusable configurations for all stacks.
+{{ .AppName }}: ac.AppConfiguration {
+    workload: wl.Service {
+        containers: {
+            {{ .AppName }}: c.Container {
+                image = "wordpress:4.8-apache"
+                env: {
+                    "WORDPRESS_DB_HOST": "secret://wordpress-db/hostAddress"
+                    "WORDPRESS_DB_PASSWORD": "secret://wordpress-db/password"
+                }
+                resources: {
+                    "cpu": "500m"
+                    "memory": "512Mi"
+                }
+            }
+        }
+        replicas: 1
+        ports: [
+            n.Port {
+                port: 80
+            }
+        ]
+    }
+    database: db.Database {
+        type: "alicloud"
+        engine: "MySQL"
+        version: "5.7"
+        size: 20
+        instanceType: "mysql.n2.serverless.1c"
+        category: "serverless_basic"
+        # SubnetID defines the virtual subnet ID associated with the VPC that the rds
+        # instance will be created in. The rds instance won't be created in user's own VPC
+        # if this field is not provided.
+        subnetID: [your-subnet-id]
+    }
+}
