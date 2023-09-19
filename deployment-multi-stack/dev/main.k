@@ -9,6 +9,6 @@ import catalog.models.schema.v1 as ac
             "cpu": "250m"
             "memory": "256Mi"
         }
-        replicas = 2
     }
+    workload.replicas = 2
 }
