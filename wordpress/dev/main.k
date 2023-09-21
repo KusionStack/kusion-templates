@@ -8,7 +8,7 @@ import catalog.models.schema.v1.workload.network as n
 import catalog.models.schema.v1.monitoring as m
 import catalog.models.schema.v1.accessories.database as db
 
-# base.k declares reusable configurations for all stacks.
+# main.k declares reusable configurations for dev stacks.
 {{ .AppName }}: ac.AppConfiguration {
     workload: wl.Service {
         containers: {
