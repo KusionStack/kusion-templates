@@ -32,12 +32,10 @@ import catalog.models.schema.v1.accessories.database as db
         ]
     }
     database: db.Database {
-        type: "local"
-        # engine: "mysql" 
-        # version: "5.7"
-        
-        # for users with M1 chip. 
-        engine: "mariadb"
-        version: "10.5"
+        type: "alicloud"
+        engine: "MySQL"
+        version: "5.7"
+        size: 20
+        instanceType: "mysql.n2.serverless.1c"
     }
 }

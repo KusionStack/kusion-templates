@@ -1,4 +1,4 @@
-projectName: wordpress
+projectName: wordpress-cloud-rds
 description: A sample wordpress project with cloud rds
 quickstart: kusion apply
 projectFields:
