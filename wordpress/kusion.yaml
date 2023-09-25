@@ -1,5 +1,5 @@
 projectName: wordpress
-description: A sample wordpress project with cloud rds
+description: A sample wordpress project
 quickstart: kusion apply
 projectFields:
   - name: AppName
