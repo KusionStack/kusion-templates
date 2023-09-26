@@ -14,6 +14,6 @@ stacks:
   - name: dev
     fields:
       - name: Image
-        description: The Image Address. Default to 'wordpress:4.8-apache'.
+        description: The Image Address. Default to 'wordpress:6.3'.
         type: string
-        default: wordpress:4.8-apache
+        default: wordpress:6.3
