@@ -13,10 +13,12 @@ import catalog.models.schema.v1.accessories.database as db
     workload: wl.Service {
         containers: {
             {{ .AppName }}: c.Container {
-                image = "wordpress:4.8-apache"
+                image = "wordpress:6.3"
                 env: {
-                    "WORDPRESS_DB_HOST": "secret://wordpress-db/hostAddress"
-                    "WORDPRESS_DB_PASSWORD": "secret://wordpress-db/password"
+                    "WORDPRESS_DB_HOST": "$(KUSION_DB_HOST)"
+                    "WORDPRESS_DB_USER": "$(KUSION_DB_USERNAME)"
+                    "WORDPRESS_DB_PASSWORD": "$(KUSION_DB_PASSWORD)"
+                    "WORDPRESS_DB_NAME": "mysql"
                 }
                 resources: {
                     "cpu": "500m"
@@ -32,10 +34,10 @@ import catalog.models.schema.v1.accessories.database as db
         ]
     }
     database: db.Database {
-        type: "alicloud"
+        type: "aws"
         engine: "MySQL"
-        version: "5.7"
+        version: "8.0"
         size: 20
-        instanceType: "mysql.n2.serverless.1c"
+        instanceType: "db.t3.micro"
     }
 }
