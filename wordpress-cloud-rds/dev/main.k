@@ -34,8 +34,10 @@ import catalog.models.schema.v1.accessories.database as db
         ]
     }
     database: db.Database {
-        type: "local"
-        engine: "mysql" 
+        type: "aws"
+        engine: "MySQL"
         version: "8.0"
+        size: 20
+        instanceType: "db.t3.micro"
     }
 }
