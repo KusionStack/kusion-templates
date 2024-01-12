@@ -1,0 +1,14 @@
+projectName: wordpress-local-db
+description: A sample wordpress project with local database
+projectFields:
+  - name: AppName
+    description: The Application Name. Defaults to 'wordpress'. 
+    type: string
+    default: wordpress
+stacks: 
+  - name: dev
+    fields: 
+     - name: Image
+       description: The Image Address. Defaults to 'wordpress:6.3'. 
+       type: string
+       default: wordpress:6.3
