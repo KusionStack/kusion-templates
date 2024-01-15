@@ -9,6 +9,6 @@ stacks:
   - name: dev
     fields:
       - name: Image
-        description: The Image Address. Default to 'gcr.io/google-samples/gb-frontend:v4'
+        description: The Image Address.
         type: string
         default: gcr.io/google-samples/gb-frontend:v4

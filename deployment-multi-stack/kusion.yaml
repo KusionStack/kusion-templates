@@ -18,7 +18,7 @@ stacks:
         type: string
         default: dev
       - name: Image
-        description: The Image Address. Default to 'gcr.io/google-samples/gb-frontend:v4'
+        description: The Image Address.
         type: string
         default: gcr.io/google-samples/gb-frontend:v4
   - name: prod
@@ -28,6 +28,6 @@ stacks:
         type: string
         default: prod
       - name: Image
-        description: The Image Address. Default to 'gcr.io/google-samples/gb-frontend:v4'
+        description: The Image Address.
         type: string
         default: gcr.io/google-samples/gb-frontend:v5

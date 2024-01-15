@@ -2,13 +2,13 @@ projectName: wordpress-cloud-rds
 description: A sample wordpress project with cloud rds
 projectFields:
   - name: AppName
-    description: The Application Name. Default to 'wordpress'.
+    description: The Application Name.
     type: string
     default: wordpress
 stacks:
   - name: dev
     fields:
       - name: Image
-        description: The Image Address. Default to 'wordpress:6.3'.
+        description: The Image Address.
         type: string
         default: wordpress:6.3
