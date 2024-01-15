@@ -4,7 +4,7 @@ import catalog.models.schema.v1.workload.container as c
 import catalog.models.schema.v1.workload.network as n
 import catalog.models.schema.v1.accessories.mysql
 
-# main.k declares customized configurations for dev stack.
+# main.k declares customized configurations for dev stack. 
 {{ .AppName }}: ac.AppConfiguration {
     workload: wl.Service {
         containers: {
@@ -15,10 +15,6 @@ import catalog.models.schema.v1.accessories.mysql
                     "WORDPRESS_DB_USER": "$(KUSION_DB_USERNAME_WORDPRESS_MYSQL)"
                     "WORDPRESS_DB_PASSWORD": "$(KUSION_DB_PASSWORD_WORDPRESS_MYSQL)"
                     "WORDPRESS_DB_NAME": "mysql"
-                }
-                resources: {
-                    "cpu": "500m"
-                    "memory": "512Mi"
                 }
             }
         }
@@ -31,7 +27,7 @@ import catalog.models.schema.v1.accessories.mysql
     }
     database: {
         {{ .AppName }}: mysql.MySQL {
-            type: "cloud"
+            type: "local"
             version: "8.0"
         }
     }
