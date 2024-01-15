@@ -4,7 +4,7 @@ import catalog.models.schema.v1 as ac
 {{ .AppName }}: ac.AppConfiguration {
     workload.containers.{{ .AppName }}: {
         # dev stack has different app configuration
-        image = "gcr.io/google-samples/gb-frontend:v5"
+        image = {{ .Image }}
         resources = {
             "cpu": "250m"
             "memory": "256Mi"

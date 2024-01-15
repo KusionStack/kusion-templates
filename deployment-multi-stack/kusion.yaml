@@ -1,32 +1,19 @@
-projectName: myproject
+projectName: deployment-multi-stack
 description: A minimal kusion project of multiple stacks
-quickstart: kusion apply
 projectFields:
   - name: AppName
     description: The Application Name.
     type: string
-    default: myapp
-  - name: ProjectName
-    description: The Project Name.
-    type: string
-    default: myproject
+    default: gb-frontend
 stacks:
   - name: dev
     fields:
-      - name: Stack
-        description: stack env. One of dev,test,stable,pre,sim,gray,prod.
-        type: string
-        default: dev
       - name: Image
         description: The Image Address.
         type: string
         default: gcr.io/google-samples/gb-frontend:v4
   - name: prod
     fields:
-      - name: Stack
-        description: stack env. One of dev,test,stable,pre,sim,gray,prod.
-        type: string
-        default: prod
       - name: Image
         description: The Image Address.
         type: string

@@ -7,7 +7,6 @@ import catalog.models.schema.v1.workload.container as c
     workload: wl.Service {
         containers: {
             "{{ .AppName }}": c.Container {
-                image = "{{ .Image }}"
                 resources: {
                     "cpu": "500m"
                     "memory": "512Mi"
