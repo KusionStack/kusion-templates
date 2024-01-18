@@ -1,5 +1,5 @@
 [package]
-name = "{{ .ProjectName }-prod"
+name = "{{ .ProjectName }}-prod"
 version = "0.1.0"
 
 [dependencies]
