@@ -1,0 +1,22 @@
+projectName: palworldserver-ecs
+description: To build a palworld server with Alicloud ECS
+projectFields:
+  - name: AppName
+    description: The Application Name.
+    type: string
+    default: palworldserver
+stacks: 
+  - name: dev
+    fields: 
+     - name: ResourceName
+       description: The name of the Alicloud resources. 
+       type: string
+       default: palworld-server
+     - name: Size
+       description: The size of the Alicloud ECS instance. 
+       type: string
+       default: small
+     - name: BandWidth
+       description: The bandwidth of the Alicloud ECS traffic. 
+       type: int
+       default: 5
