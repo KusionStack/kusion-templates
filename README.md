@@ -1,4 +1,6 @@
 # Kusion Templates
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKusionStack%2Fkusion-templates.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FKusionStack%2Fkusion-templates?ref=badge_shield)
+
 
 This repo contains the templates for `kusion init`, which make it easy to quickly get started building new Kusion projects.
 
@@ -83,3 +85,6 @@ Additional:
   Country: China
   Language: Simple Chinese
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKusionStack%2Fkusion-templates.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FKusionStack%2Fkusion-templates?ref=badge_large)
